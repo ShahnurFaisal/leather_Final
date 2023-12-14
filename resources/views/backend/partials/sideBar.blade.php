@@ -155,6 +155,20 @@
           <div data-i18n="Analytics">Customer Request</div>
         </a>
       </li>
+      {{-- site config --}}
+      <li class="menu-item {{ $data['active_menu'] == 'banner_add' ? 'active open' : '' }}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <div data-i18n="Layouts">Side Config</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item {{ $data['active_menu'] == 'banner_add' ? 'active' : '' }}">
+            <a href="{{ route('admin.banner.add') }}" class="menu-link">
+              <div data-i18n="Without menu">Product Add</div>
+            </a>
+          </li>
+        </ul>
+      </li>
     </ul>
   </aside>
   <!-- / Menu -->

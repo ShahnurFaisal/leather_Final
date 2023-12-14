@@ -7,17 +7,20 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div class="info">
-                        <h1 class="h1">Elevate Your Style with Fine Leather Craftsmanship  <span>BDLeather</span></h1>
+                        @foreach ($data['banner'] as $banner)
+                        <h1 class="h1">{{ $banner->title }}  <span>BDLeather</span></h1>
 
                         <p class="p">At BD Leather, we help you elevate your style by offering meticulously crafted leather goods that seamlessly blend exquisite design with superior craftsmanship, ensuring a touch of sophistication in every detail.</p>
-                            {{-- <div class="formooo">  --}}
+                            
                         <h5 class="h5">Get Free Quote! <span class="fw-normal ms-1">We’ll contact back in 24h</span>
                         </h5>
+                        @endforeach
+                       
                         <form action="contact.php" class="form mt-30" method="post">
                             <div class="row gx-3">
                                 <div class="col-6">
                                     <div class="form-group input-with-icon">
-                                        <input type="text" class="form-control" placeholder="Your Email *">
+                                        <input type="text" name="email" class="form-control" placeholder="Your Email *">
                                         <span class="input-icon">
                                             <i class="far fa-envelope"></i>
                                         </span>
@@ -25,17 +28,15 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-group">
-                                        <select class="form-select">
-                                            <option value="" selected>Your inquiry about</option>
-                                            <option value="">Your inquiry about</option>
-                                            <option value="">Your inquiry about</option>
-                                        </select>
+                                        
+                                            <input class="form-control" type="text" name="message" placeholder="Your inquiry about">
+                                        
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn dark-butn hover-darkBlue rounded-pill w-100 mt-3">
-                                        <span>Request A Consultation</span>
-                                    </button>
+                                    <button type="submit" class="btn dark-butn hover-darkBlue rounded-pill w-100 mt-3">
+                                    <span>Request A Consultation</span>
+                                </button>
                                 </div>
                             </div>
                         </form>
@@ -45,10 +46,13 @@
             </div>
         </div>
     </div>
+    @foreach ($data['banner'] as $banner)
     <div class="main-img" style="">
-        <img src="{{ asset('frontend/image/categories/category_four.jpg')}}" alt="" class="pattern">
+        <img src="{{ asset($banner->photo)}}" alt="" class="pattern">
 
     </div>
+    @endforeach
+    
 </header>
 <!-- ====== end header ====== -->
 

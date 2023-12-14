@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\CustomerRequestController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\BannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,9 @@ Route::group(['middleware' => ['authAdmin'],'prefix' => 'admin'], function () {
         // about
         Route::match(['get','post'],'about/add',[AboutController::class,'aboutAdd'])->name('about.add');
         // about end
+        //banner_start
+        Route::match(['get','post'],'banner/add',[BannerController::class,'bannerAdd'])->name('banner.add');
+        //banner_end
         // profile
         Route::match(['get','post'],'profile/update',[ProfileController::class,'profile_update'])->name('profile.update');
 
@@ -97,3 +101,4 @@ Route::get('product-by-category',[FrontendController::class,'product_by_category
 Route::get('single/product',[FrontendController::class,'single_product'])->name('single.product');
 Route::get('blog',[FrontendController::class,'blog'])->name('blog');
 Route::get('aboutUs',[FrontendController::class,'about_us'])->name('aboutUs');
+Route::get('banner',[FrontendController::class,'banner'])->name('banner');

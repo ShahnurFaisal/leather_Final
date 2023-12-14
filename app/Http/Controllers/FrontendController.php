@@ -12,6 +12,7 @@ class FrontendController extends Controller
         $data = array();
         $data['active_menu'] = 'home';
         $data['page_title'] = 'Home';
+        $data['banner'] = $banner = DB::table('banners')->get();
 
         return view('frontend.pages.home',compact('data'));
     }
@@ -88,4 +89,11 @@ class FrontendController extends Controller
         $data['page_title'] = ' Single product';
         return view('frontend.pages.single_product',compact('data'));
     }
+    // public function banner()
+    // {
+    //     $data = array();
+    //     $data['active_menu'] = 'banner';
+    //     $data['page_title'] = 'banner';
+
+    // }
 }

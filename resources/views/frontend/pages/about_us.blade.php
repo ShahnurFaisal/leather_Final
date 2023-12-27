@@ -20,14 +20,14 @@
     <section class="about style-2 section-padding">
         <div class="container">
             <div class="row align-items-center">
-                @foreach ($data['about_us'] as $about_us)
+                {{-- @foreach ($data['about_us'] as $about_us)  --}}
                 <div class="col-lg-6">
                     <div class="img img-cover">
                         <img src="{{asset($about_us->image ? $about_us->image :'frontend/image/about/about2.png')}}" alt="about2">
                     </div>
                 </div>
-                @endforeach
-                
+                {{-- @endforeach  --}}
+
                 <div class="col-lg-6">
                     <div class="info px-lg-5">
                         <div class="section-head style-5 mb-40">

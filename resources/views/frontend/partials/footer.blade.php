@@ -10,41 +10,44 @@
                     <small class="text">
                         Over 25 years working in Exporting Best Quality Leather Product With Affordable Price .
                     </small>
-                    @foreach ($data['about_us'] as $about_us)
-                        
-                    @endforeach
-                    <div class="socail-icons">
-                        <a href="#" class="icon-35 rounded-circle bg-gray overflow-hidden d-inline-flex align-items-center justify-content-center text-gray me-2">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="{{ $about_us->web_link }}" class="icon-35 rounded-circle bg-gray overflow-hidden d-inline-flex align-items-center justify-content-center text-gray me-2">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="icon-35 rounded-circle bg-gray overflow-hidden d-inline-flex align-items-center justify-content-center text-gray">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
+                    {{-- @foreach ($about_us as $about_us)  --}}
+                        <div class="socail-icons">
+                            <a href="#"
+                                class="icon-35 rounded-circle bg-gray overflow-hidden d-inline-flex align-items-center justify-content-center text-gray me-2">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="{{ $about_us->web_link }}"
+                                class="icon-35 rounded-circle bg-gray overflow-hidden d-inline-flex align-items-center justify-content-center text-gray me-2">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#"
+                                class="icon-35 rounded-circle bg-gray overflow-hidden d-inline-flex align-items-center justify-content-center text-gray">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    {{-- @endforeach  --}}
+
                 </div>
             </div>
-            @foreach ($data['about_us'] as $about_us)
-            <div class="col-lg-3">
-                <div class="items">
-                    <div class="title">
-                        Information
+            {{-- @foreach ($about_us as $single_about_us)  --}}
+                <div class="col-lg-3">
+                    <div class="items">
+                        <div class="title">
+                            Information
+                        </div>
+                        <small class="text mb-10 d-block">
+                            {{ $about_us->address }}
+                        </small>
+                        <small class="text mb-10 d-block">
+                            {{ $about_us->phone }}
+                        </small>
+                        <small class="text d-block">
+                            {{ $about_us->email }}
+                        </small>
                     </div>
-                    <small class="text mb-10 d-block">
-                        {{ $about_us->address }}
-                    </small>
-                    <small class="text mb-10 d-block">
-                        {{ $about_us->phone }}
-                    </small>
-                    <small class="text d-block">
-                        {{ $about_us->email }}
-                    </small>
                 </div>
-            </div>
-            @endforeach
-            
+            {{-- @endforeach  --}}
+
             <div class="col-lg-2">
                 <div class="items">
                     <div class="title">
@@ -104,7 +107,9 @@
                 </div>
                 <div class="col-lg-6">
                     <small class="small">
-                        © 2022 Copyrights by <a href="#" class="fw-bold text-decoration-underline">BDLeather.</a> All Rights Reserved. Designed by <a href="#" class="fw-bold text-decoration-underline">Us</a>
+                        © 2022 Copyrights by <a href="#" class="fw-bold text-decoration-underline">BDLeather.</a>
+                        All Rights Reserved. Designed by <a href="#"
+                            class="fw-bold text-decoration-underline">Us</a>
                     </small>
                 </div>
             </div>

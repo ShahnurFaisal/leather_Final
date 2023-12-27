@@ -8,8 +8,12 @@ use App\Http\Controllers\backend\BlogController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\backend\CategoryController;
+use App\Http\Controllers\backend\CommentController;
 use App\Http\Controllers\backend\CustomerRequestController;
+use App\Http\Controllers\backend\FaqController;
+use App\Http\Controllers\backend\MisssionVissionController;
 use App\Http\Controllers\backend\ProfileController;
+use App\Http\Controllers\backend\ServiceController;
 use App\Http\Controllers\BannerController;
 
 /*
@@ -59,6 +63,18 @@ Route::group(['middleware' => ['authAdmin'],'prefix' => 'admin'], function () {
         Route::get('product/delete/{id}',[ProductController::class,'product_delete'])->name('product.delete');
         Route::get('product/subcategory/show',[ProductController::class,'product_subcategory_show'])->name('product.subcategory.show');
         // product end
+        // comment start
+        Route::match(['get','post'],'comment/add',[CommentController::class,'comment_add'])->name('comment.add');
+        Route::match(['get','post'],'comment/edit/{id}',[CommentController::class,'comment_edit'])->name('comment.edit');
+        Route::get('comment/list',[CommentController::class,'comment_list'])->name('comment.list');
+        Route::get('comment/delete/{id}',[CommentController::class,'comment_delete'])->name('comment.delete');
+        // comment end
+        // service start
+        Route::match(['get','post'],'service/add',[ServiceController::class,'service_add'])->name('service.add');
+        Route::match(['get','post'],'service/edit/{id}',[ServiceController::class,'service_edit'])->name('service.edit');
+        Route::get('service/list',[ServiceController::class,'service_list'])->name('service.list');
+        Route::get('service/delete/{id}',[ServiceController::class,'service_delete'])->name('service.delete');
+        // service end
         //blog start
         Route::match(['get','post'],'blog-add',[BlogController::class,'blog_add'])->name('blog.add');
         Route::match(['get','post'],'blog-edit/{id}',[BlogController::class,'blog_edit'])->name('blog.edit');
@@ -71,6 +87,10 @@ Route::group(['middleware' => ['authAdmin'],'prefix' => 'admin'], function () {
         //banner_start
         Route::match(['get','post'],'banner/add',[BannerController::class,'bannerAdd'])->name('banner.add');
         //banner_end
+        // mission vission
+        Route::match(['get','post'],'mission/vission',[MisssionVissionController::class,'mission_vission'])->name('mission.vission');
+        Route::match(['get','post'],'faqs',[FaqController::class,'faq'])->name('faq');
+        Route::get('faqs/delete/{id}',[FaqController::class,'faq_delete']);
         // profile
         Route::match(['get','post'],'profile/update',[ProfileController::class,'profile_update'])->name('profile.update');
 
@@ -96,9 +116,11 @@ Route::get('about-us',[FrontendController::class,'about_us'])->name('about.us');
 Route::get('contact',[FrontendController::class,'contact'])->name('contact');
 Route::post('customer/request/add',[FrontendController::class,'Customer_request_add'])->name('customer.request.add');
 Route::get('blog',[FrontendController::class,'blog'])->name('blog');
+Route::get('single/blog/{id}',[FrontendController::class,'single_blog'])->name('single.blog');
 Route::get('product',[FrontendController::class,'product'])->name('product');
 Route::get('product-by-category',[FrontendController::class,'product_by_category'])->name('product.by.category');
 Route::get('single/product',[FrontendController::class,'single_product'])->name('single.product');
 Route::get('blog',[FrontendController::class,'blog'])->name('blog');
 Route::get('aboutUs',[FrontendController::class,'about_us'])->name('aboutUs');
-Route::get('banner',[FrontendController::class,'banner'])->name('banner');
+Route::get('services',[FrontendController::class,'services'])->name('services');
+

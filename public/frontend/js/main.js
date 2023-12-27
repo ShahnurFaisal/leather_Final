@@ -38,7 +38,7 @@ $( function() {
             navbar.removeClass("nav-scroll");
         }
     });
-    
+
 
     // ---------- to top -----------
     wind.on("scroll", function() {
@@ -55,7 +55,7 @@ $( function() {
             toTop.removeClass("show");
         }
     });
-    
+
     // ------- to top -------
     $('.to_top').click(function() {
         $('html, body').animate({
@@ -198,7 +198,7 @@ $( function() {
       $dropdown.off("mouseenter mouseleave");
     }
   });
-  
+
 
 
 
@@ -445,7 +445,7 @@ $(document).ready(function() {
             }
         }
     });
-      
+
     // ------------ clients sliders -----------
     let SwiperBottom = new Swiper('.clients-slider5 .swiper-container', {
     spaceBetween: 0,
@@ -476,7 +476,7 @@ $(document).ready(function() {
         }
     }
     });
-      
+
     // ------------ testimonial sliders -----------
     var swiper = new Swiper('.testimonial-slider.style-5 .swiper-container', {
         slidesPerView: 4,
@@ -1155,17 +1155,17 @@ $(document).ready(function() {
 
 
 /* ===============================  Preloader page  =============================== */
-$( function() {
+// $( function() {
 
-    paceOptions = {
-        ajax: true,
-        document: true,
-        eventLag: false
-    };
+//     paceOptions = {
+//         ajax: true,
+//         document: true,
+//         eventLag: false
+//     };
 
-    Pace.on('done', function () {
-        $('#preloader').addClass("isdone");
-        $('.loading').addClass("isdone");
-    });
-  } );
+//     Pace.on('done', function () {
+//         $('#preloader').addClass("isdone");
+//         $('.loading').addClass("isdone");
+//     });
+//   } );
 

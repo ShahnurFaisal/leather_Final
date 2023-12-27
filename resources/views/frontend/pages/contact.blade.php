@@ -16,7 +16,7 @@
                         <img src="assets/img/icons/mail3d.png" alt="">
                     </div>
                     <div class="inf">
-                        <h5>settgroup@gmail.com</h5>
+                        <h5>{{ $about_us->email }}</h5>
                     </div>
                 </div>
                 <div class="commun-card">
@@ -24,7 +24,7 @@
                         <img src="assets/img/icons/map3d.png" alt="">
                     </div>
                     <div class="inf">
-                        <h5>58 Howard St, Dhanmondi, Dhaka</h5>
+                        <h5>{{ $about_us->address }}</h5>
                     </div>
                 </div>
                 <div class="commun-card">
@@ -32,7 +32,7 @@
                         <img src="assets/img/icons/msg3d.png" alt="">
                     </div>
                     <div class="inf">
-                        <h5>(+880)1678-138530</h5>
+                        <h5>{{ $about_us->phone }}</h5>
                     </div>
                 </div>
             </div>

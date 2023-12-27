@@ -7,17 +7,17 @@
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-12">
                             <div class="card-body">
-                                <h5 class="card-title text-primary" style="text-transform: uppercase">Category List</h5>
+                                <h5 class="card-title text-primary" style="text-transform: uppercase">Blog List</h5>
                                 <div class="table-responsive text-nowrap">
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>SL</th>
                                                 <th>Photo</th>
-                                                <th>Product Name</th>
-                                                <th>Category Name</th>
-                                                <th>SubCategory Name</th>
+                                                <th>Title</th>
                                                 <th>Priority</th>
+                                                <th>Date</th>
+                                                <th>Description</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>

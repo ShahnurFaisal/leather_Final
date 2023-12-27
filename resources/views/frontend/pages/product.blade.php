@@ -24,7 +24,7 @@
                                 <div class="card-title">
                                     <span>Categories</span>
                                 </div>
-                               
+
 
                                 <div class="accordion" id="accordionExample">
                                     @foreach ($data['category'] as $single_category)
@@ -64,10 +64,7 @@
                         <div class="products-content">
                             <div class="top-filter mb-10">
                                 <div class="row align-items-center">
-                                    {{-- <div class="col-lg-6">
-                                        <p class="color-999 fs-12px mb-3 mb-lg-0"> <span class="color-000">1 - 40</span>
-                                            of 1,652 results</p>
-                                    </div> --}}
+                                 
                                     <div class="col-lg-6">
                                         <div class="r-side">
                                             <div class="row align-items-center">
@@ -93,7 +90,7 @@
 
                                                     </div>
                                                 </div>
-                                                <a href="#" class="btn rounded-pill mt-20">
+                                                <a href="{{ route('single.product',$single_product->id) }}" class="btn rounded-pill mt-20">
                                                     <span>Read More</span>
                                                 </a>
 

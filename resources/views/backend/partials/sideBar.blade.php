@@ -96,12 +96,7 @@
 
         </ul>
       </li>
-      {{-- <li class="menu-item {{ $data['active_menu'] == 'subcategory' ? 'active' : '' }}">
-        <a href="{{ route('admin.subcategory.list') }}" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Analytics">SubCategory</div>
-        </a>
-      </li> --}}
+
 
       <li class="menu-item {{ $data['active_menu'] == 'product_add' || $data['active_menu'] == 'product_edit' || $data['active_menu'] == 'product_list' ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -118,6 +113,46 @@
           <li class="menu-item {{ $data['active_menu'] == 'product_list' ? 'active' : '' }}">
             <a href="{{ route('admin.product.list') }}" class="menu-link">
               <div data-i18n="Without navbar">Product List</div>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+      <li class="menu-item {{ $data['active_menu'] == 'comment_add' || $data['active_menu'] == 'comment_edit' || $data['active_menu'] == 'comment_list' ? 'active open' : '' }}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <div data-i18n="Layouts">Comments</div>
+        </a>
+
+        <ul class="menu-sub">
+          <li class="menu-item {{ $data['active_menu'] == 'comment_add' ? 'active' : '' }}">
+            <a href="{{ route('admin.comment.add') }}" class="menu-link">
+              <div data-i18n="Without menu">Comments Add</div>
+            </a>
+          </li>
+          <li class="menu-item {{ $data['active_menu'] == 'comment_list' ? 'active' : '' }}">
+            <a href="{{ route('admin.comment.list') }}" class="menu-link">
+              <div data-i18n="Without navbar">Comments List</div>
+            </a>
+          </li>
+
+        </ul>
+      </li>
+      <li class="menu-item {{ $data['active_menu'] == 'service_add' || $data['active_menu'] == 'service_edit' || $data['active_menu'] == 'service_list' ? 'active open' : '' }}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <div data-i18n="Layouts">Services</div>
+        </a>
+
+        <ul class="menu-sub">
+          <li class="menu-item {{ $data['active_menu'] == 'service_add' ? 'active' : '' }}">
+            <a href="{{ route('admin.service.add') }}" class="menu-link">
+              <div data-i18n="Without menu">Service Add</div>
+            </a>
+          </li>
+          <li class="menu-item {{ $data['active_menu'] == 'service_list' ? 'active' : '' }}">
+            <a href="{{ route('admin.service.list') }}" class="menu-link">
+              <div data-i18n="Without navbar">Service List</div>
             </a>
           </li>
 
@@ -149,14 +184,32 @@
           <div data-i18n="Analytics">About</div>
         </a>
       </li>
+      <li class="menu-item {{ $data['active_menu'] == 'mission_vission' ? 'active' : '' }}">
+        <a href="{{ route('admin.mission.vission') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Analytics">Mission Vission</div>
+        </a>
+      </li>
+      <li class="menu-item {{ $data['active_menu'] == 'faq' ? 'active' : '' }}">
+        <a href="{{ route('admin.faq') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Analytics">Faqs</div>
+        </a>
+      </li>
       <li class="menu-item {{ $data['active_menu'] == 'customer_request_list' ? 'active' : '' }}">
         <a href="{{ route('admin.customer.request.list') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Analytics">Customer Request</div>
         </a>
       </li>
+      <li class="menu-item {{ $data['active_menu'] == 'banner_add' ? 'active' : '' }}">
+        <a href="{{ route('admin.banner.add') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Analytics">Side Config</div>
+        </a>
+      </li>
       {{-- site config --}}
-      <li class="menu-item {{ $data['active_menu'] == 'banner_add' ? 'active open' : '' }}">
+      {{-- <li class="menu-item {{ $data['active_menu'] == 'banner_add' ? 'active open' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Side Config</div>
@@ -168,7 +221,7 @@
             </a>
           </li>
         </ul>
-      </li>
+      </li> --}}
     </ul>
   </aside>
   <!-- / Menu -->

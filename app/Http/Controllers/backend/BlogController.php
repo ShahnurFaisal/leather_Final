@@ -95,7 +95,12 @@ class BlogController extends Controller
         $server_response = array('status' => 'FAILED', 'message' => 'Not Found');
 
         try {
-                Blog::findOrFail($id)->delete();
+              $blog =  Blog::findOrFail($id);
+                $blog_photo = $blog->photo;
+                if(File::exists($blog_photo)){
+                    File::delete($blog_photo);
+                }
+                $blog->delete();
             $server_response = array('status' => 'SUCCESS', 'message' => 'Successfully Deleted');
         } catch (\Exception $e) {
             $server_response = array('status' => 'FAILED', 'message' => 'Not Found');

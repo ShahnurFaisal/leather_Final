@@ -255,7 +255,7 @@ small.text {
     background-image: url(../img/icons/toggle_dot.svg); }
 
 /* --------------- Start Preloader --------------- */
-.pace {
+/* .pace {
   pointer-events: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -409,7 +409,7 @@ small.text {
   0% {
     opacity: 1; }
   100% {
-    opacity: 0; } }
+    opacity: 0; } } */
 
 /* --------------- End Preloader --------------- */
 /* --------------- to_top button --------------- */

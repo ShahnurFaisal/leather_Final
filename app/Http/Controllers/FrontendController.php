@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\CustomerRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,14 +13,20 @@ class FrontendController extends Controller
         $data = array();
         $data['active_menu'] = 'home';
         $data['page_title'] = 'Home';
-        $data['banner'] = $banner = DB::table('banners')->get();
-
+        $data['banner']  = DB::table('banners')->select('photo','title','detail')->get();
+        $data['comments']= DB::table('comments')->select('commentor_name','commentor_designation','comment')->get();
+        $data['services']= DB::table('services')->select('title','description','photo')->get();
+        $data['mission_vission'] = DB::table('mission_vissions')->select('mission','vission')->first();
+        $data['categories'] = DB::table('categories')->select('id','category_name','photo')->take(6)->orderByDesc('priority')->get();
+        $data['blog'] = DB::table('blogs')->select('id','title','photo','created_at')->take(3)->orderByDesc('priority')->get();
+        $data['faqs'] = DB::table('faqs')->select('id','question','answer')->get();
         return view('frontend.pages.home',compact('data'));
     }
     public function about_us(){
         $data['active_menu'] = 'about_us';
         $data['page_title'] = 'About us';
-        $data['about_us'] = $about_us = DB::table('abouts')->get();
+
+
         return view('frontend.pages.about_us', compact('data'));
     }
     public function contact(){
@@ -50,8 +57,16 @@ class FrontendController extends Controller
     public function blog(){
         $data['active_menu'] = 'blog';
         $data['page_title'] = 'Blog';
-        $data['blog'] = $blog = DB::table('blogs')->get();
+        $data['blog'] = DB::table('blogs')->get();
         return view('frontend.pages.blog', compact('data'));
+    }
+    public function single_blog($id){
+        $data['active_menu'] = 'blog';
+        $data['page_title'] = 'Blog';
+        $data['single_blog'] = Blog::find($id);
+        $data['recent_blogs'] = DB::table('blogs')->select('id','title','photo','created_at','description')->orderByDesc('priority')->limit(3)->get();
+        $data['related_blogs'] = DB::table('blogs')->select('id','title','photo','created_at','description')->orderByDesc('priority')->limit(5)->get();
+        return view('frontend.pages.single_blog', compact('data'));
     }
     public function product(){
         $data['active_menu'] = 'product';
@@ -59,7 +74,7 @@ class FrontendController extends Controller
         $data['category'] = DB::table('categories')->select('id','category_name')->get();
         $category_id =null;
         $data_limit=10;
-        $data['product'] =    $product = DB::table('products')
+        $data['product'] = DB::table('products')
         ->leftJoin('categories','categories.id','=','products.category_id')
         ->select('products.id','products.name','products.description','products.photo','categories.category_name')->paginate($data_limit);
         return view('frontend.pages.product', compact('data'));
@@ -89,11 +104,11 @@ class FrontendController extends Controller
         $data['page_title'] = ' Single product';
         return view('frontend.pages.single_product',compact('data'));
     }
-    // public function banner()
-    // {
-    //     $data = array();
-    //     $data['active_menu'] = 'banner';
-    //     $data['page_title'] = 'banner';
+  public function services(){
+    $data['active_menu'] = 'services';
+    $data['page_title'] = ' Services';
+    $data['services']= DB::table('services')->select('title','description','photo')->get();
 
-    // }
+    return view('frontend.pages.services',compact('data'));
+  }
 }
